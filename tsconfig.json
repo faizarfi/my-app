@@ -13,15 +13,24 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": "./",  // Pastikan base URL benar untuk resolving path dari root
+    "paths": {
+      "@/*": ["src/*"],            // Alias untuk folder src
+      "@/styles/*": ["src/styles/*"],   // Alias untuk folder styles
+      "@/components/*": ["src/components/*"], // Alias untuk folder components
+      "@/app/*": ["src/app/*"]      // Alias untuk folder app (jika ada di dalam src)
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts", 
+    "**/*.ts", 
+    "**/*.tsx", 
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
